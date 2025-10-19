@@ -1,12 +1,40 @@
 import { useMediaQuery } from "react-responsive";
+import { useEffect, useRef } from "react";
 
 const FooterSection = () => {
     const isMobile = useMediaQuery({
         query: "(max-width: 768px)",
     });
 
+    const footerRef = useRef(null);
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        // Only observe and control video for non-mobile
+        if (!isMobile) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    const [entry] = entries;
+                    if (entry.isIntersecting) {
+                        // Delay 2 seconds before playing
+                        setTimeout(() => {
+                            if (videoRef.current) {
+                                videoRef.current.play();
+                            }
+                        }, 2000);
+                    }
+                },
+                { threshold: 0.5 } // 50% of footer visible
+            );
+
+            if (footerRef.current) observer.observe(footerRef.current);
+
+            return () => observer.disconnect();
+        }
+    }, [isMobile]);
+
     return (
-        <section className="footer-section">
+        <section ref={footerRef} className="footer-section">
             <img
                 src="/images/footer-dip.png"
                 alt=""
@@ -24,11 +52,12 @@ const FooterSection = () => {
                     <img
                         src="/images/footer-drink.png"
                         className="absolute top-0 object-contain"
+                        alt="footer drink"
                     />
                 ) : (
                     <video
+                        ref={videoRef}
                         src="/videos/splash.mp4"
-                        autoPlay
                         playsInline
                         muted
                         className="absolute top-0 object-contain mix-blend-lighten"
@@ -37,13 +66,13 @@ const FooterSection = () => {
 
                 <div className="flex-center gap-5 relative z-10 md:mt-20 mt-5">
                     <div className="social-btn">
-                        <img src="./images/yt.svg" alt="" />
+                        <img src="./images/yt.svg" alt="YouTube" />
                     </div>
                     <div className="social-btn">
-                        <img src="./images/insta.svg" alt="" />
+                        <img src="./images/insta.svg" alt="Instagram" />
                     </div>
                     <div className="social-btn">
-                        <img src="./images/tiktok.svg" alt="" />
+                        <img src="./images/tiktok.svg" alt="TikTok" />
                     </div>
                 </div>
 
@@ -70,9 +99,6 @@ const FooterSection = () => {
                             Updates, Events, and More!
                         </p>
                         <div className="flex justify-between items-center border-b border-[#D9D9D9] py-5 md:mt-10">
-                            {/* The input field and arrow icon for newsletter signup. */}{" "}
-                            {/* A
-          border at the bottom for a clean, modern look. */}
                             <input
                                 type="email"
                                 placeholder="Enter your email"
@@ -84,11 +110,10 @@ const FooterSection = () => {
                 </div>
 
                 <div className="copyright-box">
-                    {/* The final row with copyright and legal links. */}
                     <p>Copyright © 2025 Spylt - All Rights Reserved</p>
                     <div className="flex items-center gap-7">
                         <p>Privacy Policy</p>
-                        <p>Terms of Sеrvice</p>
+                        <p>Terms of Service</p>
                     </div>
                 </div>
             </div>
