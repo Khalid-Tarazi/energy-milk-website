@@ -25,6 +25,7 @@ Check out the live version of this project here:
 
 This hosted version showcases the full functionality, animations, and design of the Spylt-inspired website.  
 It’s best viewed on desktop for the complete interactive experience.
+
 ---
 ## 💡 Inspiration
 
