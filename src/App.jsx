@@ -100,14 +100,13 @@ const App = () => {
 
       {/* ===== Main Content (hidden until fully loaded) ===== */}
       <div
-        className={`${
-          isReady ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-1000`}
+        className={`${isReady ? "opacity-100" : "opacity-0"
+          } transition-opacity duration-1000`}
       >
         <NavBar />
         <div id="smooth-wrapper">
           <div id="smooth-content">
-            <HeroSection />
+            <HeroSection isReady={isReady} />
             <MessageSection />
             <FlavorSection />
             <NutritionSection />

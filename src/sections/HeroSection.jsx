@@ -2,16 +2,30 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import { useRef, useEffect } from "react";
 
-
-const HeroSection = () => {
+const HeroSection = ({ isReady }) => {
     const isMobile = useMediaQuery({
-        query: "(max-width 768px)",
+        query: "(max-width: 768px)",
     });
 
     const isTablet = useMediaQuery({
-        query: "(max-width 1024px)",
+        query: "(max-width: 1024px)",
     });
+
+    const videoRef = useRef(null);
+
+    // Play video only after loading is complete
+    useEffect(() => {
+        if (isReady && videoRef.current) {
+            const playPromise = videoRef.current.play();
+            if (playPromise !== undefined) {
+                playPromise.catch((error) => {
+                    console.warn("Video autoplay failed:", error);
+                });
+            }
+        }
+    }, [isReady]);
 
     useGSAP(() => {
         const titleSplit = SplitText.create(".hero-title", {
@@ -25,17 +39,24 @@ const HeroSection = () => {
         tl.to(".hero-content", {
             opacity: 1,
             y: 0,
-            ease: "power1.inOut"
-        }).to(".hero-text-scroll", {
-            duration: 1,
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            ease: "circ.out",
-        }, "-=0.5")
-            .from(titleSplit.chars, {
-                yPercent: 200,
-                stagger: 0.02,
-                ease: "power2.out",
-            }, "-=0.5"
+            ease: "power1.inOut",
+        }).to(
+            ".hero-text-scroll",
+            {
+                duration: 1,
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                ease: "circ.out",
+            },
+            "-=0.5"
+        )
+            .from(
+                titleSplit.chars,
+                {
+                    yPercent: 200,
+                    stagger: 0.02,
+                    ease: "power2.out",
+                },
+                "-=0.5"
             );
 
         const heroTl = gsap.timeline({
@@ -58,19 +79,28 @@ const HeroSection = () => {
     return (
         <section className="bg-main-bg">
             <div className="hero-container">
-                {
-                    isTablet ? (
-                        <>
-                            {isMobile && <img src="/images/hero-bg.png" className="absolute bottom-40 size-full object-cover"/>}
-                            <img src="/images/hero-img.png" className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto" />
-                        </>
-                    ) : (
-                        <video src="/videos/hero-bg.mp4"
-                            autoPlay
-                            muted
-                            playsInline
-                            className="absolute inset-0 w-full h-full object-cover" />)
-                }
+                {isTablet ? (
+                    <>
+                        {isMobile && (
+                            <img
+                                src="/images/hero-bg.png"
+                                className="absolute bottom-40 size-full object-cover"
+                            />
+                        )}
+                        <img
+                            src="/images/hero-img.png"
+                            className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
+                        />
+                    </>
+                ) : (
+                    <video
+                        ref={videoRef}
+                        src="/videos/hero-bg.mp4"
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                    />
+                )}
 
                 <div className="hero-content opacity-0">
                     <div className="overflow-hidden">
@@ -99,7 +129,7 @@ const HeroSection = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default HeroSection
+export default HeroSection;
