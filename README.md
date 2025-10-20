@@ -1,4 +1,4 @@
-# 🎮 Spylt-Inspired Website
+# Spylt-Inspired Website
 
 This project is a **modern, interactive web experience** built using **React**, **GSAP animations**, and **Tailwind CSS** — inspired by the incredible design and motion work of [Spylt](https://www.spylt.com/).  
 I followed a tutroial, and my goal was to recreate and learn from Spylt’s advanced UI/UX techniques while adding personal touches and improvements.
@@ -17,7 +17,16 @@ I followed a tutroial, and my goal was to recreate and learn from Spylt’s adva
 | **Node.js** | Environment setup and dependency management |
 
 ---
+## 🌐 Live Website
 
+Check out the live version of this project here:  
+
+👉 **[View Live Project](https://energy-milk-website.vercel.app/)**  
+
+This hosted version showcases the full functionality, animations, and design of the Spylt-inspired website.  
+It’s best viewed on desktop for the complete interactive experience.
+
+---
 ## 💡 Inspiration
 
 This project was developed following a tutorial and inspired by [Spylt.com](https://www.spylt.com/).  
