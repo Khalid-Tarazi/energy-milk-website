@@ -74,7 +74,7 @@ const App = () => {
 
   return (
     <main className="relative overflow-hidden">
-      {/* ===== Real Loading Screen ===== */}
+      {/* ===== Loading Screen ===== */}
       {!isReady && (
         <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#FBE8D3] text-[#5A2E0C] font-extrabold transition-opacity duration-700">
           <h1 className="text-5xl sm:text-6xl tracking-wide animate-bounce mb-6">SPYLT</h1>
