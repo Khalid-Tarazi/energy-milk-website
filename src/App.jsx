@@ -1,7 +1,6 @@
 import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
-import { useGSAP } from "@gsap/react";
 
 import NavBar from "./components/NavBar";
 import HeroSection from "./sections/HeroSection";
@@ -19,12 +18,12 @@ const App = () => {
   const [progress, setProgress] = useState(0);
 
   // Initialize GSAP scroll smoother
-  useGSAP(() => {
+  useEffect(() => {
     ScrollSmoother.create({
       smooth: 3,
       effects: true,
     });
-  });
+  }, []);
 
   // Real loading detection for images & videos
   useEffect(() => {
@@ -78,17 +77,8 @@ const App = () => {
       {/* ===== Real Loading Screen ===== */}
       {!isReady && (
         <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#FBE8D3] text-[#5A2E0C] font-extrabold transition-opacity duration-700">
-          {/* Animated brand text */}
-          <h1 className="text-5xl sm:text-6xl tracking-wide animate-bounce mb-6">
-            SPYLT
-          </h1>
-
-          {/* Loading text */}
-          <p className="mb-4 text-lg tracking-widest font-semibold">
-            CHUGGING {Math.floor(progress)}%
-          </p>
-
-          {/* Progress bar */}
+          <h1 className="text-5xl sm:text-6xl tracking-wide animate-bounce mb-6">SPYLT</h1>
+          <p className="mb-4 text-lg tracking-widest font-semibold">CHUGGING {Math.floor(progress)}%</p>
           <div className="relative h-2 overflow-hidden rounded-full w-64 bg-[#5A2E0C]/20">
             <div
               className="absolute top-0 left-0 h-full transition-all duration-300 bg-[#5A2E0C]"
@@ -99,21 +89,16 @@ const App = () => {
       )}
 
       {/* ===== Main Content (hidden until fully loaded) ===== */}
-      <div
-        className={`${isReady ? "opacity-100" : "opacity-0"
-          } transition-opacity duration-1000`}
-      >
+      <div className={`${isReady ? "opacity-100" : "opacity-0"} transition-opacity duration-1000`}>
         <NavBar />
         <div id="smooth-wrapper">
           <div id="smooth-content">
             <HeroSection isReady={isReady} />
-            <MessageSection />
-            <FlavorSection />
-            <NutritionSection />
-            <div>
-              <BenefitSection />
-              <TestimonialSection />
-            </div>
+            <MessageSection isReady={isReady} />
+            <FlavorSection isReady={isReady} />
+            <NutritionSection isReady={isReady} />
+            <BenefitSection isReady={isReady} />
+            <TestimonialSection isReady={isReady} />
             <FooterSection />
           </div>
         </div>
