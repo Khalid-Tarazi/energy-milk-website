@@ -48,13 +48,13 @@ This version was made purely for **educational and learning purposes**.
 
 Planned enhancements and ideas for future versions:
 
-- 🌙 Add **dark/light mode toggle**
-- 📱 Improve **mobile responsiveness** and optimize **GSAP animations** on small screens
-- 🧭 Add **navigation animations** and smoother **route transitions**
-- 🗂️ Integrate **content management (CMS)** or **backend API** for dynamic content
-- 🎥 Add **video background controls** and **lazy loading** for better performance
-- 💾 Implement **Progressive Web App (PWA)** support
-- 🧠 Add **AI-generated motion variations** or **interactive elements**
+-  Add **dark/light mode toggle**
+-  Improve **mobile responsiveness** and optimize **GSAP animations** on small screens
+-  Add **navigation animations** and smoother **route transitions**
+-  Integrate **content management (CMS)** or **backend API** for dynamic content
+-  Add **video background controls** and **lazy loading** for better performance
+-  Implement **Progressive Web App (PWA)** support
+-  Add **AI-generated motion variations** or **interactive elements**
 
 ---
 
