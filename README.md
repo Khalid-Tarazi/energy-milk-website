@@ -36,11 +36,10 @@ This version was made purely for **educational and learning purposes**.
 ---
 ## 🧩 Features
 
-- ⚡ **Fast and optimized build setup** using **Vite**
-- 💫 **Smooth page transitions and animations** powered by **GSAP**
-- 🎨 **Clean and responsive design** with **Tailwind CSS**
-- ⚛️ **Modular React component structure** for scalability
-- 🧠 **Educational project** focused on learning motion design and UI development
+-  **Fast and optimized build setup** using **Vite**
+-  **Smooth page transitions and animations** powered by **GSAP**
+-  **Clean and responsive design** with **Tailwind CSS**
+-  **Modular React component structure** for scalability
 
 ---
 
