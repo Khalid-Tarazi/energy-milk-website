@@ -23,15 +23,14 @@ Check out the live version of this project here:
 
 👉 **[View Live Project](https://energy-milk-website.vercel.app/)**  
 
-This hosted version showcases the full functionality, animations, and design of the Spylt-inspired website.  
+This hosted version showcases the full functionality, animations, and design of the Spylt-inspired website, with added functionality and personal features.  
 It’s best viewed on desktop for the complete interactive experience.
 
 ---
 ## 💡 Inspiration
 
 This project was developed following a tutorial and inspired by [Spylt.com](https://www.spylt.com/).  
-**All design credit goes to the original creators.**  
-This version was made purely for **educational and learning purposes**.
+**All design credit goes to the original creators.** 
 
 ---
 ## 🧩 Features
