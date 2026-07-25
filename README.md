@@ -5,7 +5,7 @@ I followed a tutroial, and my goal was to recreate and learn from Spylt’s adva
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 | Technology | Purpose |
 |-------------|----------|
@@ -27,13 +27,13 @@ This hosted version showcases the full functionality, animations, and design of 
 It’s best viewed on desktop for the complete interactive experience.
 
 ---
-## 💡 Inspiration
+## Inspiration
 
 This project was developed following a tutorial and inspired by [Spylt.com](https://www.spylt.com/).  
 **All design credit goes to the original creators.** 
 
 ---
-## 🧩 Features
+## Features
 
 -  **Fast and optimized build setup** using **Vite**
 -  **Smooth page transitions and animations** powered by **GSAP**
@@ -42,7 +42,7 @@ This project was developed following a tutorial and inspired by [Spylt.com](http
 
 ---
 
-## 🛠️ Future Improvements
+## Future Improvements
 
 Planned enhancements and ideas for future versions:
 
