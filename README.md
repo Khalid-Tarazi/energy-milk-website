@@ -21,7 +21,7 @@ I followed a tutroial, and my goal was to recreate and learn from Spylt’s adva
 
 Check out the live version of this project here:  
 
-👉 **[View Live Project](https://energy-milk-website.vercel.app/)**  
+👉 **[View Live Project](https://energymilk.tarazi.dev/)**  
 
 This hosted version showcases the full functionality, animations, and design of the Spylt-inspired website, with added functionality and personal features.  
 It’s best viewed on desktop for the complete interactive experience.
